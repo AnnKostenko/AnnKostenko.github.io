@@ -1,0 +1,362 @@
+/*Подключение шрифтов*/
+
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@font-face {
+	font-family: Elz;
+	src: url('../Fonts/Elz.ttf');
+}
+
+
+/*Создание анимации*/
+
+@keyframes Text_color {
+	from {
+		color: black;
+	}
+	to {
+		color: red;
+	}
+}
+
+input#image1:checked~label[for="image1"]{
+    background-color: aqua;
+}
+
+
+/*Параметры поля, в котором находится сам слайдер*/
+
+div>div#content {
+	width: 1300px;
+	height: 900px;
+}
+
+
+/*Подключение изображений для слайдера*/
+
+#img1 {
+	background-image: url('../ImageSlider/img1.jpg');
+}
+
+#img2 {
+	background-image: url('../ImageSlider/img2.jpg');
+}
+
+#img3 {
+	background-image: url('../ImageSlider/img3.jpg');
+}
+
+#img4 {
+	background-image: url('../ImageSlider/img4.jpg');
+}
+
+#img5 {
+	background-image: url('../ImageSlider/img5.jpg');
+}
+
+#img6 {
+	background-image: url('../ImageSlider/img6.jpg');
+}
+
+#img7 {
+	background-image: url('../ImageSlider/img7.jpg');
+}
+
+#img8 {
+	background-image: url('../ImageSlider/img8.jpg');
+}
+
+
+/*Характеристика самого слайдера, в обычном состоянии*/
+
+div#content>div[id="img1"] {
+	background-size: 650px 450px;
+	width: 650px;
+	height: 450px;
+	border: 10px solid white;
+	border-radius: 20px;
+	visibility: hidden;
+	opacity: 0;
+	margin-top: 30px;
+	margin-left: 350px;
+}
+
+div#content>div[id="img2"],
+div[id="img3"],
+div[id="img4"],
+div[id="img5"],
+div[id="img6"],
+div[id="img7"],
+div[id="img8"] {
+	background-size: 650px 450px;
+	width: 650px;
+	height: 450px;
+	border: 10px solid white;
+	border-radius: 20px;
+	visibility: hidden;
+	opacity: 0;
+	margin-top: -450px;
+	margin-left: 350px;
+}
+
+
+/*Замена изображений  и плавный преход, при нажатии на "radio"*/
+
+div#content>input[name="Slide"]:checked+div {
+	border-radius: 20px;
+	visibility: visible;
+	opacity: 1;
+	transition: opacity 2s ease-out 0.1s, visibility 0.1s ease-out 0s;
+}
+
+
+/*Скрытие обычных радио-кнопок */
+
+input[type="radio"] {
+	display: none;
+}
+
+
+/*Вид радио-кнопок*/
+
+label[for="image1"],
+label[for="image2"],
+label[for="image3"],
+label[for="image4"],
+label[for="image5"],
+label[for="image6"],
+label[for="image7"],
+label[for="image8"] {
+	width: 20px;
+	height: 20px;
+	display: block;
+	position: relative;
+	border-radius: 100%;
+	top: -350px;
+	left: 365px;
+	border: 4px solid #fdbea2;
+	background-color: white;
+	margin-bottom: 15px;
+}
+
+
+/*Характеристика страницы на которой присутствует меню*/
+
+.page_menu {
+	width: 1349px;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 0;
+	list-style: none;
+	background: #111;
+}
+
+
+/*Отображение пунктов меню*/
+
+.Elem_Menu {
+	width: 220px;
+	border-top: 1px solid #111;
+	border-bottom: 1px solid #000;
+	font-family: 'Lobster', cursive;
+}
+
+
+/*Вид названий пунктов меню*/
+
+.Elem_Menu a {
+	display: block;
+	padding: 20px;
+	color: white;
+	font-size: 22px;
+	text-decoration: none;
+}
+
+
+/*Вид пункта меню при наведении на него*/
+
+.Elem_Menu a:hover {
+	color: black;
+	background-color: #fdbea2;
+}
+
+
+/*Вид страницы под, которой скрывается меню*/
+
+.main_page {
+	height: 2800px;
+	width: 1349px;
+	background: linear-gradient(to bottom left, #fff, #fdbea2);
+	position: relative;
+	top: 0;
+	bottom: 100%;
+	left: 0;
+	z-index: 1;
+	padding: 4px;
+}
+
+
+/*Характеристика знака, при нажатии, на который, появляется меню*/
+
+.mark_menu_appearance {
+	position: absolute;
+	clip: rect(0, 0, 0, 0);
+}
+
+label[for="navi"] {
+	position: absolute;
+	left: 15px;
+	top: 15px;
+	z-index: 2;
+	height: 30px;
+	width: 30px;
+	cursor: pointer;
+	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>");
+}
+
+.mark_menu_appearance + label,
+.main_page {
+	transition: left 0.3s;
+}
+
+.mark_menu_appearance:checked + label {
+	left: 215px;
+}
+
+.mark_menu_appearance:checked ~ .main_page {
+	left: 200px;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	/*	height: 100%;
+	width: 100%;*/
+	height: 2800px;
+	width: 1349px;
+}
+
+
+/*Характеристика заголовка страницы*/
+
+h2 {
+	margin-left: 130px;
+	margin-top: 15px;
+	font-size: 50px;
+	font-family: Elz;
+	width: 500px;
+	text-align: center;
+}
+
+
+/*Параметры изображений в портфолио*/
+
+ol {
+	margin-top: -430px;
+	height: 2150px;
+	width: 1340px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+ol li {
+	list-style-type: none;
+	width: 200px;
+	height: 200px;
+	margin-top: 25px;
+	margin-left: 60px;
+	text-align: center;
+	margin-top: 25px;
+	margin-left: 60px;
+}
+
+img,
+.hover {
+	border: 10px solid white;
+	border-radius: 20px;
+}
+
+
+/*Эффект при наведении мышки на изображение*/
+
+img,
+.hover:hover {
+	border: 15px solid #fdbea2;
+	border-radius: 25px;
+}
+
+
+/*Характеристика и анимация текста "Акция!"*/
+
+#stock {
+	position: absolute;
+	left: 680px;
+	top: 39px;
+	font-size: 16px;
+	animation-name: Text_color;
+	animation-duration: 3s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+span {
+	font-size: 30px;
+	font-family: Elz;
+	font-weight: 700;
+}
+
+
+/*Ссылка, при нажатии на которую, пользователь, может вернуться в начало страницы*/
+
+a#link {
+	position: absolute;
+	text-decoration: none;
+	font-size: 30px;
+	font-family: Elz;
+	color: black;
+	top: 2750px;
+	width: 110px;
+}
+
+
+/*Кликабельность и размещение логотипа*/
+
+a img,
+#Logo {
+	width: 90px;
+	height: 90px;
+	position: absolute;
+	left: 120px;
+	border-radius: 100%;
+	border: 10px solid white;
+}
+
+
+/*Вид текста, о разработчике проекта*/
+
+#Develop {
+	width: 400px;
+	float: right;
+	font-family: 'Pacifico', cursive;
+	font-size: 18px;
+}
+
+
+/*Размер и размещение линии*/
+
+hr {
+	width: 500px;
+	margin-left: 840px;
+	margin-top: -50px;
+}

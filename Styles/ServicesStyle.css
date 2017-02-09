@@ -1,0 +1,264 @@
+/*Подключение шрифтов*/
+
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@font-face {
+	font-family: Elz;
+	src: url('../Fonts/Elz.ttf');
+}
+
+
+/*Создание анимации*/
+
+@keyframes Text_color {
+	from {
+		color: black;
+	}
+	to {
+		color: red;
+	}
+}
+
+
+/*Характеристика страницы на которой присутствует меню*/
+
+.page_menu {
+	height: 662px;
+	width: 1366px;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 0;
+	list-style: none;
+	background: #111;
+}
+
+
+/*Отображение пунктов меню*/
+
+.Elem_Menu {
+	width: 220px;
+	border-top: 1px solid #111;
+	border-bottom: 1px solid #000;
+	font-family: 'Lobster', cursive;
+}
+
+
+/*Вид названий пунктов меню*/
+
+.Elem_Menu a {
+	display: block;
+	padding: 20px;
+	color: white;
+	font-size: 22px;
+	text-decoration: none;
+}
+
+
+/*Вид пункта меню при наведении на него*/
+
+.Elem_Menu a:hover {
+	color: black;
+	background-color: #fdbea2;
+}
+
+
+/*Вид страницы под, которой скрывается меню*/
+
+.main_page {
+	height: 662px;
+	width: 1366px;
+	background: linear-gradient(to bottom left, #fff, #fdbea2);
+	position: relative;
+	top: 0;
+	bottom: 100%;
+	left: 0;
+	z-index: 1;
+	padding: 4px;
+}
+
+
+/*Характеристика знака, при нажатии, на который, появляется меню*/
+
+.mark_menu_appearance {
+	position: absolute;
+	clip: rect(0, 0, 0, 0);
+}
+
+label[for="navi"] {
+	position: absolute;
+	left: 15px;
+	top: 15px;
+	z-index: 2;
+	height: 30px;
+	width: 30px;
+	cursor: pointer;
+	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>");
+}
+
+.mark_menu_appearance + label,
+.main_page {
+	transition: left 0.3s;
+}
+
+.mark_menu_appearance:checked + label {
+	left: 215px;
+}
+
+.mark_menu_appearance:checked ~ .main_page {
+	left: 200px;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	/*height: 100%;
+	width: 100%;*/
+	height: 662px;
+	width: 1366px;
+}
+
+
+/*Характеристика заголовка страницы*/
+
+h2 {
+	margin-left: 250px;
+	margin-top: 15px;
+	font-size: 50px;
+	font-family: Elz;
+	width: 175px;
+	text-align: center;
+}
+
+
+/*Вид текста, о разработчике проекта*/
+
+#Develop {
+	width: 400px;
+	float: right;
+	font-family: 'Pacifico', cursive;
+	font-size: 18px;
+}
+
+
+/*Размер и размещение линии*/
+
+hr {
+	width: 500px;
+	margin-left: 860px;
+	margin-top: 20px;
+}
+
+
+/*Кликабельность и размещение логотипа*/
+
+a img,
+#Logo {
+	width: 90px;
+	height: 90px;
+	position: absolute;
+	left: 160px;
+	border-radius: 100%;
+	border: 10px solid white;
+}
+
+
+/*Характеристика и анимация текста "Акция!"*/
+
+#stock {
+	position: absolute;
+	left: 680px;
+	top: 39px;
+	font-size: 16px;
+	animation-name: Text_color;
+	animation-duration: 3s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+span {
+	font-size: 30px;
+	font-family: Elz;
+	font-weight: 700;
+}
+
+
+/*Размер и харкатеристика всего поля, в котором размещены характеристики заказа*/
+
+.fon {
+	width: 300px;
+	height: 400px;
+	margin-top: 50px;
+	margin-left: 150px;
+	border-radius: 20px;
+	background: linear-gradient(to bottom left, #fff, bisque);
+	border: 2px solid grey;
+	box-shadow: 5px 5px 5px grey;
+}
+
+
+/*Характеристика поля с заказом*/
+
+.head {
+	width: 296.4px;
+	/*height: 50px;*/
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	background-color: bisque;
+	text-align: center;
+	line-height: 50px;
+	font-family: cursive;
+	font-size: 35px;
+	border-bottom: 2px solid grey;
+}
+
+ul.Lists>li.First {
+	margin-top: 15px;
+}
+
+ul.Lists>li {
+	list-style-type: none;
+	line-height: 55px;
+	text-align: center;
+	border-bottom: 1px solid grey;
+	border-top: 1px solid grey;
+	font-family: Elz;
+	font-size: 30px;
+}
+
+input[type="button"] {
+	width: 296.4px;
+	background: linear-gradient(to bottom left, #fff, bisque);
+	text-align: center;
+	line-height: 50px;
+	font-family: cursive;
+	font-size: 35px;
+	margin-top: 50px;
+	border: 1px solid grey;
+}
+
+#fon {
+	margin-top: -400px;
+	margin-left: 550px;
+}
+
+#fon1 {
+	margin-top: -400px;
+	margin-left: 950px;
+}
+
+
+/*Вид кнопки "Заказать" при нажатии*/
+
+input[type="button"]:active {
+	background: linear-gradient(to top right, #fff, bisque);
+}

@@ -1,0 +1,302 @@
+/*Подключение шрифтов*/
+
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@font-face {
+	font-family: Elz;
+	src: url('../Fonts/Elz.ttf');
+}
+
+
+/*Создание анимации*/
+
+@keyframes Text_color {
+	from {
+		color: black;
+	}
+	to {
+		color: red;
+	}
+}
+
+
+/*Характеристика страницы на которой присутствует меню*/
+
+.page_menu {
+	height: 662px;
+	width: 1366px;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 0;
+	list-style: none;
+	background: #111;
+}
+
+
+/*Отображение пунктов меню*/
+
+.Elem_Menu {
+	width: 220px;
+	border-top: 1px solid #111;
+	border-bottom: 1px solid #000;
+	font-family: 'Lobster', cursive;
+}
+
+
+/*Вид названий пунктов меню*/
+
+.Elem_Menu a {
+	display: block;
+	padding: 20px;
+	color: white;
+	font-size: 22px;
+	text-decoration: none;
+}
+
+
+/*Вид пункта меню при наведении на него*/
+
+.Elem_Menu a:hover {
+	color: black;
+	background-color: #fdbea2;
+}
+
+
+/*Вид страницы под, которой скрывается меню*/
+
+.main_page {
+	height: 662px;
+	width: 1366px;
+	background: linear-gradient(to bottom left, #fff, #fdbea2);
+	position: relative;
+	top: 0;
+	bottom: 100%;
+	left: 0;
+	z-index: 1;
+	padding: 4px;
+}
+
+
+/*Характеристика знака, при нажатии, на который, появляется меню*/
+
+.mark_menu_appearance {
+	position: absolute;
+	clip: rect(0, 0, 0, 0);
+}
+
+label[for="navi"] {
+	position: absolute;
+	left: 15px;
+	top: 15px;
+	z-index: 2;
+	height: 30px;
+	width: 30px;
+	cursor: pointer;
+	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>");
+}
+
+.mark_menu_appearance + label,
+.main_page {
+	transition: left 0.3s;
+}
+
+.mark_menu_appearance:checked + label {
+	left: 215px;
+}
+
+.mark_menu_appearance:checked ~ .main_page {
+	left: 200px;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	/*height: 100%;
+	width: 100%;*/
+	height: 662px;
+	width: 1366px;
+}
+
+
+/*Характеристика заголовка страницы*/
+
+h2 {
+	margin-left: 250px;
+	margin-top: 15px;
+	font-size: 50px;
+	font-family: Elz;
+	width: 260px;
+	text-align: center;
+}
+
+
+/*Кликабельность и размещение логотипа*/
+
+a img,
+#Logo {
+	width: 90px;
+	height: 90px;
+	position: absolute;
+	left: 160px;
+	border-radius: 100%;
+	border: 10px solid white;
+}
+
+
+/*Характеристика и анимация текста "Акция!"*/
+
+#stock {
+	position: absolute;
+	left: 680px;
+	top: 39px;
+	font-size: 16px;
+	animation-name: Text_color;
+	animation-duration: 3s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+span {
+	font-size: 30px;
+	font-family: Elz;
+	font-weight: 700;
+}
+
+
+/*Характеристика заголовка "Звоните"*/
+
+h3 {
+	margin-top: 30px;
+	width: 220px;
+	font-size: 60px;
+	color: red;
+	font-family: Elz;
+	margin-left: 100px;
+	animation-name: Text_color;
+	animation-duration: 3s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+
+/*Параметры телефонных номеров*/
+
+#phone_numbers {
+	font-family: sans-serif;
+	font-size: 30px;
+	width: 250px;
+	margin-left: 80px;
+}
+
+
+/*Характеристика ссылки "Напишите в ВК"*/
+
+#link_VK {
+	position: absolute;
+	font-family: Elz;
+	font-size: 30px;
+	color: red;
+	left: 70px;
+	width: 295px;
+	font-weight: 600;
+	top: 320px;
+}
+
+
+/*Характеристика текста "Заполните поля и т.д."*/
+
+#Forms {
+	margin-top: -170px;
+	font-size: 30px;
+	width: 700px;
+	color: red;
+	font-family: Elz;
+	margin-left: 635px;
+}
+
+
+/*Характеристика поля "Введите Ваше имя"*/
+
+input[type="text"] {
+	margin-left: 800px;
+	margin-top: 50px;
+	line-height: 35px;
+	border-radius: 5px;
+	font-size: 16px;
+	font-family: cursive;
+}
+
+
+/*Характеристика лейблов "Введите Ваш номер и т.д."*/
+
+input[type="text"]+label {
+	font-family: Elz;
+	font-size: 22px;
+	margin-left: -355px;
+}
+
+
+/*Вид текста, о разработчике проекта*/
+
+#Develop {
+	width: 400px;
+	float: right;
+	font-family: 'Pacifico', cursive;
+	font-size: 18px;
+}
+
+
+/*Размер и размещение линии*/
+
+hr {
+	width: 500px;
+	margin-left: 840px;
+	margin-top: 130px;
+}
+
+
+/*Характеристика ссылки "Напишите в ВК"*/
+
+#link_groupVK {
+	position: absolute;
+	font-family: Elz;
+	font-size: 30px;
+	color: red;
+	left: 70px;
+	width: 310px;
+	font-weight: 600;
+	top: 380px;
+}
+
+
+/*Вид кнопки "Отправить"*/
+
+#Send {
+	position: absolute;
+	margin-top: 130px;
+	width: 120px;
+	height: 30px;
+	margin-left: 15px;
+	border-radius: 5px;
+	font-family: Elz;
+	font-size: 20px;
+	background: linear-gradient(to bottom left, white, #fdbea2);
+	border: 1px solid black;
+}
+
+
+/*Вид кнопки при нажатии на нее*/
+
+#Send:active {
+	background: linear-gradient(to top left, white, #fdbea2);
+}
