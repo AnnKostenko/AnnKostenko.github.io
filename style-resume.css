@@ -1,0 +1,45 @@
+/*Характеристика всего поля, в котором находится резюме*/
+body{
+    background-image: url(sayagata-400px.png);
+}
+#background {
+	width: 500px;
+	height: 250px;
+	margin: 0 auto;
+	background-color: firebrick;
+    border-radius: 30px;
+    
+}
+
+
+/*Характеристика фотографии, для резюме*/
+
+img {
+	width: 150px;
+	height: 150px;
+	border-radius: 100%;
+	margin-top: 40px;
+	margin-left: 30px;
+	border: 2px solid grey;
+	filter: drop-shadow(10px 10px 5px darkred) contrast(115%);
+}
+
+
+/*Характеристика текста*/
+
+p {
+	margin-left: 230px;
+	margin-top: -150px;
+	font-family: sans-serif;
+    color: white;
+}
+
+span {
+	font-weight: 800;
+}
+
+a {
+	color:black;
+    font-weight: 600;
+  
+}
